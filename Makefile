@@ -5,10 +5,9 @@ all:	linkedList.c
 	
 	
 commit:
-	rm *.out
+	rm a.out
 	git add .
 	git commit . -m "commit by vikrant"
 	git push
-	gcc linkedList.c 
 	
 	
