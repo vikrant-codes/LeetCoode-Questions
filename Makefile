@@ -1,7 +1,12 @@
+CC = gcc
+FLAGS = -g
+
 all:	linkedList.c
-	gcc linkedList.c 
+	$(CC) $(FLAGS) linkedList.c 
 	./a.out
 	
+clean:
+	rm a.out
 	
 	
 commit:
