@@ -23,17 +23,17 @@ struct Node* createNode(int data)
 
 struct Node* build(int *arr, int size)				// creating a linked list from a array
 {
-	if( arr!=NULL && size > 0 )				// check point for valid arguments
+	if( arr != NULL && size > 0 )				// check point for valid arguments
 	{
 		struct Node *head = NULL, *last = NULL, *new = NULL ;
 		int arrayIndex = 0 ;				// varable to iterate on array 
-		head = createNode( arr[ arrayIndex++ ] ) ;	// create first element and join rest using loop
+		head = createNode( arr[arrayIndex++] ) ;	// create first element and join rest using loop
 		last = head ;
 		size = size - 1 ;
 		
-		while( size > 0 && head!= NULL)			// join the elements one by one
+		while( size > 0 && head != NULL)			// join the elements one by one
 		{
-			new = createNode( arr[ arrayIndex++ ] ) ;
+			new = createNode( arr[arrayIndex++] ) ;
 			last->next = new ;
 			last = new ;
 			size = size - 1 ;			// decrement the size of array  ---really Important---
@@ -46,12 +46,12 @@ struct Node* build(int *arr, int size)				// creating a linked list from a array
 		return NULL ;					// on failure return NULL
 	}
 }
-int delete(struct Node **head,int data)
+int delete(struct Node **head, int data)
 {
 	struct Node *temp = NULL ;				// temporary variable to free the pointer which w
-	while(*head!=NULL)
+	while( *head != NULL )
 	{
-		if((*head)->data==data)				// when required elemet is found
+		if( (*head)->data == data )				// when required elemet is found
 		{
 			temp = *head ;				// store the pointer temporarily too free it	
 			*head = (*head)->next ;			// remove the link
@@ -67,7 +67,7 @@ void traverse(struct Node *head)				// traverse/print the linked list
 {
 	while ( head != NULL )					// loop till reach to end/NULL
 	{
-		printf("%d\t",head->data) ;			// print the data of current Node
+		printf("%d\t", head->data) ;			// print the data of current Node
 		head = head->next ;
 	}
 	printf("\n");
@@ -90,13 +90,13 @@ int insertAsc(struct Node **head, int data )			// insert the element in linked l
 	return 0;
 }
 
-struct Node* buildSortedAsc(int *arr,int size)			// build sorted(ASC) linked list from given array
+struct Node* buildSortedAsc(int *arr, int size)			// build sorted(ASC) linked list from given array
 {
-	if( arr!=NULL && size > 0 )				// check point for valid arguments
+	if( arr != NULL && size > 0 )				// check point for valid arguments
 	{
 		struct Node *head = NULL ;			// head of the linked list
 		for(int i=0; i<size ; i++)
-			insertAsc(&head,arr[i]) ;		// insert elemts one by one keeping it sorted
+			insertAsc(&head, arr[i]) ;		// insert elemts one by one keeping it sorted
 		return head ;					// return the head of created linked list
 	}
 	else
@@ -113,11 +113,11 @@ int* getRandomArray(int size)
 		arr[i] = rand() % size ;
 	return arr ;
 }
-int main()
+int main(int argc,char **argv)
 {
 	int size = 10 ;						// set the size of input
 	int *arr = getRandomArray(size);			// generate the random array of given size
-	struct Node *head = buildSortedAsc(arr,size) ;		// build ascending linked list from array
+	struct Node *head = buildSortedAsc(arr, size) ;		// build ascending linked list from array
 	traverse(head) ;					// traverse linked list
 }
 
