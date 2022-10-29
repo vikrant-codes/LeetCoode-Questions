@@ -8,11 +8,10 @@ all:	linkedList.c
 clean:
 	rm a.out
 	
-	
 commit:
 	rm a.out
 	git add .
-	git commit . -m "commit by vikrant"
+	git commit . -m $(msg)
 	git push
 	
 	
