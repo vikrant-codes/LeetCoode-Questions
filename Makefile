@@ -9,10 +9,9 @@ clean:
 	rm a.out
 	
 commit:
-	gcc linkedList.c
 	rm a.out
 	git add .
-	git commit . -m $(MSG)
+	git commit . -m $(msg)
 	git push
 	
 	
