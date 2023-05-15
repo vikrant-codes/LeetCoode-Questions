@@ -5,7 +5,7 @@
 typedef struct Node						// structure of the Node specified
 {
 	int data ;						// data of the structure
-	struct Node *next ;					// address of next 
+	struct Node *next ;					// address of next Node
 }	Node ;
 
 struct Node* createNode(int data)
